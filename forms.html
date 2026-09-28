@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compartilhe sua receita e ajude a ampliar nosso caderno de receitas para a família.">
+    <title>Envie sua receita</title>
+</head>
+<body>
+    <header>
+        <h1>Envie sua receita</h1>
+        <p>Compartilhe os sabores que fazem parte da sua família.</p>
+
+        <nav aria-label="Menu principal">
+            <ul>
+                <a href="Receitas.html">Receitas</a>/
+                <a href="forms.html" aria-current="page">Formulário</a>/
+                <a href="inicio.html">Início</a>/
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <h2>Uma receita, uma história</h2>
+            <figure>
+                <video controls muted autoplay>
+                <source src="video/blog.mp4">
+                </video>
+                <figcaption>Compartilhar uma receita é uma forma de trocar conhecimentos na cozinha.</figcaption>
+            </figure>
+            <p>Conte quais ingredientes você usa e explique o preparo passo a passo.</p>
+            <p><mark>Os campos indicados como obrigatórios precisam ser preenchidos.</mark></p>
+
+            <form action="forms.html" method="get" aria-describedby="aviso-envio">
+                <p id="aviso-envio">
+                    Este formulário é demonstrativo: ao enviar, a página será recarregada.
+                    As receitas não serão armazenadas nem publicadas.
+                </p>
+
+                <fieldset>
+                    <legend>Sobre você</legend>
+                    <p>
+                        <label for="nome">Seu nome (obrigatório):</label><br>
+                        <input type="text" id="nome" name="nome" autocomplete="given-name"
+                               placeholder="Ex.: Ana" required>
+                    </p>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Sobre a receita</legend>
+                    <p>
+                        <label for="receita">Nome da receita (obrigatório):</label><br>
+                        <input type="text" id="receita" name="receita"
+                               placeholder="Ex.: Bolo de cenoura" required>
+                    </p>
+                    <p>
+                        <label for="categoria">Categoria (obrigatório):</label><br>
+                        <input type="text" id="categoria" name="categoria" list="categorias"
+                               placeholder="Escolha ou escreva uma categoria" required>
+                        <datalist id="categorias">
+                            <option value="Massas"></option>
+                            <option value="Pratos principais"></option>
+                            <option value="Sobremesas"></option>
+                            <option value="Lanches"></option>
+                            <option value="Saladas"></option>
+                        </datalist>
+                    </p>
+                    <p>
+                        <label for="data-preparo">Quando você preparou essa receita? (opcional):</label><br>
+                        <input type="date" id="data-preparo" name="data-preparo">
+                    </p>
+                    <p>
+                        <label for="tempo">Tempo total em minutos (obrigatório):</label><br>
+                        <input type="number" id="tempo" name="tempo" min="1" step="1"
+                               placeholder="Ex.: 40" required>
+                    </p>
+                    <p>
+                        <label for="porcoes">Rendimento em porções (obrigatório):</label><br>
+                        <input type="number" id="porcoes" name="porcoes" min="1" step="1"
+                               placeholder="Ex.: 4" required>
+                    </p>
+                    <p>
+                        <label for="ingredientes">Ingredientes e quantidades (obrigatório):</label><br>
+                        <textarea id="ingredientes" name="ingredientes" rows="6" cols="45"
+                                  placeholder="Escreva um ingrediente por linha, com sua quantidade." required></textarea>
+                    </p>
+                    <p>
+                        <label for="preparo">Modo de preparo (obrigatório):</label><br>
+                        <textarea id="preparo" name="preparo" rows="8" cols="45"
+                                  placeholder="Explique as etapas na ordem em que devem ser feitas." required></textarea>
+                    </p>
+                </fieldset>
+
+                <p><button type="submit">Enviar receita (demonstração)</button></p>
+            </form>
+        </section>
+
+        <section>
+            <h2>Como descrever os ingredientes</h2>
+            <article>
+                <h3>Informe sempre a quantidade</h3>
+                <p>
+                    Use as receitas do site como exemplo. A tabela mostra as quantidades
+                    de massa utilizadas na lasanha e no macarrão ao molho três queijos.
+                </p>
+                <table border="1"> <!-- Criar tabelas para organizar as informações das receitas. -->
+                    <caption>Quantidade de massa nas receitas publicadas</caption>
+                    <thead>
+                        <tr>
+                            <th scope="col">Ingrediente</th>
+                            <th scope="col">Quantidade</th>
+                            <th scope="col">Unidade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">
+                                Lasanha de frango com presunto, queijo e molho vermelho<br>
+                                Ingrediente: massa de lasanha
+                            </th>
+                            <td>400</td>
+                            <td rowspan="2">Gramas</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">
+                                Macarrão ao molho três queijos<br>
+                                Ingrediente: macarrão
+                            </th>
+                            <td>400</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+
+            <details>
+                <summary>Posso enviar uma receita simples?</summary>
+                <p>
+                    Sim! Receitas com poucos ingredientes também são bem-vindas.
+                    Informe as quantidades, o tempo e todas as etapas do preparo.
+                </p>
+            </details>
+            <details>
+                <summary>Minha receita aparecerá no site depois do envio?</summary>
+                <p>
+                    Não automaticamente. Este projeto usa somente HTML e o formulário
+                    demonstra o preenchimento e a validação dos campos.
+                    A publicação depende da edição dos arquivos do site.
+                </p>
+            </details>
+        </section>
+
+        <aside>
+            <h2>Nosso caderno de receitas</h2>
+            <p>Temos 2 receitas publicadas e uma meta inicial de 5.</p>
+            <p>
+                <label for="progresso-receitas">Progresso das publicações:</label>
+                <progress id="progresso-receitas" value="2" max="5">2 de 5 receitas</progress>
+            </p>
+            <p>Este indicador é atualizado manualmente a cada nova publicação.</p>
+
+            <blockquote cite="https://bvsms.saude.gov.br/bvs/publicacoes/guia_alimentar_populacao_brasileira_2ed.pdf">
+                <p>Desenvolver, exercitar e partilhar habilidades culinárias.</p>
+            </blockquote>
+            <p>
+                Fonte: Receitas de cozinha
+                <cite><a href="https://www.tudoreceitas.com/">Guia das receitas</a></cite>.
+            </p>
+        </aside>
+    </main>
+
+    <footer>
+        <p>Receitas simples para o cotidiano — Projeto educacional em HTML.</p>
+        <p><a href="inicio.html">Voltar ao início</a></p>
+    </footer>
+</body>
+</html>
